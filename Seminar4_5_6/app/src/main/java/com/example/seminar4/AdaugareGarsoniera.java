@@ -45,7 +45,7 @@ public class AdaugareGarsoniera extends AppCompatActivity {
                 String strada = etStrada.getText().toString();
 
                 EditText edNrEtaj = findViewById(R.id.editTextEtaj);
-                int nrEtaj = Integer.parseInt(editTextNrEtaj.getText().toString());
+                int nrEtaj = Integer.parseInt(edNrEtaj.getText().toString());
 
                 EditText edrApartament = findViewById(R.id.editTextNrApartament);
                 int nrApartament = Integer.parseInt(edrApartament.getText().toString());
@@ -58,8 +58,11 @@ public class AdaugareGarsoniera extends AppCompatActivity {
 
                 Intent it = new Intent();
                 it.putExtra("garsoniera", garsoniera);
-                setResult(402, it);
+                setResult(RESULT_OK, it);
+                sendBroadcast(it);
                 finish();
+
+
             }
         });
     }

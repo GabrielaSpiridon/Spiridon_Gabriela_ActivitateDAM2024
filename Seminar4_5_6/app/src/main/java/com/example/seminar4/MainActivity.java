@@ -47,20 +47,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        adapter = new Shape(garsoniere,getApplicationContext(),garsoniere.size());
+
 
 
         Button btnVizualizare = findViewById(R.id.buttonVizualizareGarsoniere);
         btnVizualizare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(garsoniere.isEmpty())
+                {
+                    Toast.makeText(getApplicationContext(),"Nu exista garsoniere de afisat!",Toast.LENGTH_SHORT).show();
+                }
                 Intent it = new Intent(getApplicationContext(),VizualizareGarsoniere.class);
+                // Trimite lista de garsoniere prin intent
                 it.putParcelableArrayListExtra("garsoniere",(ArrayList<? extends Parcelable>) garsoniere);
                 startActivity(it);
+
             }
         });
-
-
     }
 
 

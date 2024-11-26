@@ -1,22 +1,18 @@
 package com.example.seminar4;
 
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.content.Intent;
+
 import java.util.List;
 
 public class Shape extends BaseAdapter {
-    private List<Garsoniera> garsoniere = null;
-    private Context ctx;
-    private int resursaLayout;
-
+    private List<Garsoniera> garsoniere; // Lista de garsoniere
+    private Context ctx; // Contextul activității
+    private int resursaLayout; // Resursa de layout personalizată
 
     public Shape(List<Garsoniera> garsoniere, Context ctx, int resursaLayout) {
         this.garsoniere = garsoniere;
@@ -26,46 +22,59 @@ public class Shape extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return garsoniere.size();
+        return garsoniere.size(); // Numărul de elemente din listă
     }
 
     @Override
     public Object getItem(int position) {
-        return garsoniere.get(position);
+        return garsoniere.get(position); // Elementul de pe poziția specificată
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position; // Poziția ca identificator unic
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater=LayoutInflater.from(ctx);
-        View v=inflater.inflate(resursaLayout,parent,false);
+        ViewHolder viewHolder;
 
-        TextView orasTV = convertView.findViewById(R.id.OrasTextView);
+        if (convertView == null) {
+            // Inflatarea layout-ului doar dacă convertView este null
+            LayoutInflater inflater = LayoutInflater.from(ctx);
+            convertView = inflater.inflate(resursaLayout, parent, false);
 
-        TextView stradaTV = convertView.findViewById(R.id.StradaTextView);
+            // Inițializarea ViewHolder pentru reutilizare
+            viewHolder = new ViewHolder();
+            viewHolder.orasTV = convertView.findViewById(R.id.OrasTextView);
+            viewHolder.stradaTV = convertView.findViewById(R.id.StradaTextView);
+            viewHolder.nrEtajTV = convertView.findViewById(R.id.EtajTextView9);
+            viewHolder.nrApartamentTV = convertView.findViewById(R.id.NrApartamentTextView10);
+            viewHolder.ocupareTV = convertView.findViewById(R.id.OcupareTextView8);
 
-        TextView nrEtajTV = convertView.findViewById(R.id.EtajTextView9);
-
-        TextView nrApartamentTV = convertView.findViewById(R.id.NrApartamentTextView10);
-
-        TextView ocupareTV = convertView.findViewById(R.id.OcupareTextView8);
-
-        Garsoniera garsoniera =(Garsoniera)getItem(position);
-
-        orasTV.setText(garsoniera.getOras());
-        stradaTV.setText(garsoniera.getStrada());
-        nrEtajTV.setText(garsoniera.getNrEtaj());
-        nrApartamentTV.setText(garsoniera.getNrApartament());
-        if(garsoniera.getEsteOcupata()==true) {
-            ocupareTV.setText("Ocupata");
+            convertView.setTag(viewHolder); // Stocarea ViewHolder în convertView
+        } else {
+            // Reutilizarea ViewHolder
+            viewHolder = (ViewHolder) convertView.getTag();
         }
-        else{
-            ocupareTV.setText("Libera");
-        }
+
+        // Setarea valorilor în TextView-uri
+        Garsoniera garsoniera = (Garsoniera) getItem(position);
+        viewHolder.orasTV.setText(garsoniera.getOras());
+        viewHolder.stradaTV.setText(garsoniera.getStrada());
+        viewHolder.nrEtajTV.setText("Etaj: " + garsoniera.getNrEtaj());
+        viewHolder.nrApartamentTV.setText("Apartament: " + garsoniera.getNrApartament());
+        viewHolder.ocupareTV.setText(garsoniera.getEsteOcupata() ? "Libera" : "Ocupata");
+
         return convertView;
+    }
+
+    // Clasă statică ViewHolder pentru performanță
+    static class ViewHolder {
+        TextView orasTV;
+        TextView stradaTV;
+        TextView nrEtajTV;
+        TextView nrApartamentTV;
+        TextView ocupareTV;
     }
 }

@@ -57,7 +57,7 @@ public class Garsoniera implements Parcelable {
         dest.writeString(strada);
         dest.writeInt(nrEtaj);
         dest.writeInt(nrApartament);
-        dest.writeByte((byte) (esteOcupata ? 1 : 0));
+        dest.writeByte((byte) (esteOcupata ? 0 : 1));
     }
 
 

@@ -29,10 +29,10 @@
         android:id="@+id/OcupareTextView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="28dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/NrApartamentTextView10"
         app:layout_constraintTop_toBottomOf="@+id/OrasTextView" />
 
     <TextView
@@ -49,9 +49,9 @@
         android:id="@+id/NrApartamentTextView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/EtajTextView9"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/OrasTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
