@@ -62,9 +62,11 @@ public class MainActivity extends AppCompatActivity {
                 // Trimite lista de garsoniere prin intent
                 it.putParcelableArrayListExtra("garsoniere",(ArrayList<? extends Parcelable>) garsoniere);
                 startActivity(it);
-
             }
         });
+
+
+
     }
 
 

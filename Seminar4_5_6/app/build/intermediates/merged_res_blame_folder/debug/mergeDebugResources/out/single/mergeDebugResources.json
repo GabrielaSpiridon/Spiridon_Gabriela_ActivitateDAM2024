@@ -1,0 +1,86 @@
+[
+    {
+        "merged": "com.example.seminar4.app-debug-4:/xml_backup_rules.xml.flat",
+        "source": "com.example.seminar4.app-main-6:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.seminar4.app-main-6:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.seminar4.app-main-6:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.seminar4.app-main-6:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.seminar4.app-main-6:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.seminar4.app-main-6:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.seminar4.app-main-6:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/layout_activity_afisare_json.xml.flat",
+        "source": "com.example.seminar4.app-main-6:/layout/activity_afisare_json.xml"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.seminar4.app-main-6:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.seminar4.app-main-6:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.seminar4.app-main-6:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.seminar4.app-main-6:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.seminar4.app-main-6:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.seminar4.app-main-6:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.seminar4.app-main-6:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/layout_activity_vizualizare_garsoniere.xml.flat",
+        "source": "com.example.seminar4.app-main-6:/layout/activity_vizualizare_garsoniere.xml"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.seminar4.app-pngs-0:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/layout_activity_main.xml.flat",
+        "source": "com.example.seminar4.app-main-6:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/layout_shape.xml.flat",
+        "source": "com.example.seminar4.app-main-6:/layout/shape.xml"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.seminar4.app-main-6:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.seminar4.app-debug-4:/layout_activity_adaugare_garsoniera.xml.flat",
+        "source": "com.example.seminar4.app-main-6:/layout/activity_adaugare_garsoniera.xml"
+    }
+]

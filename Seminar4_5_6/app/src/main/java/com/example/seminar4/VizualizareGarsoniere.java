@@ -1,5 +1,6 @@
 package com.example.seminar4;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -9,17 +10,38 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.room.Room;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class VizualizareGarsoniere extends AppCompatActivity {
 
+    List<Garsoniera> garsoniere=null;
+    public GarsonieraDatabase garsonieraDb=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vizualizare_garsoniere);
 
+        Intent it=getIntent();
+
+        garsoniere=new ArrayList<>();
+        garsonieraDb= Room.databaseBuilder(getApplicationContext(),GarsonieraDatabase.class,"GarsonieraDatabase").build();
+
+
+        Executor executor = Executors.newSingleThreadExecutor();
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                List<Garsoniera> listaDB = garsonieraDb.garsonieraDAO().getAllGarsoniere();
+                garsoniere.addAll(listaDB);
+            }
+        });
+
+         /*
         ArrayList<Garsoniera> garsoniere = getIntent().getParcelableArrayListExtra("garsoniere");
 
         // Verifică dacă lista a fost primită corect
@@ -27,7 +49,10 @@ public class VizualizareGarsoniere extends AppCompatActivity {
             //Toast.makeText(this, "Nu s-au primit garsoniere!", Toast.LENGTH_LONG).show();
             return;
         }
+        */
         ListView listaGarsoniere = findViewById(R.id.listaGarsoniere);
+
+
 
         /*
         List<Garsoniera> garsoniere = new ArrayList<>();

@@ -3,8 +3,16 @@ package com.example.seminar4;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+import java.util.Date;
+
+@Entity(tableName = "Garsoniera")
 public class Garsoniera implements Parcelable {
 
+    @PrimaryKey(autoGenerate = true)
+    int id;
     String oras;
     String strada;
     int nrEtaj;
@@ -27,6 +35,7 @@ public class Garsoniera implements Parcelable {
     }
 
     protected Garsoniera(Parcel in) {
+        id =in.readInt();
         oras = in.readString();
         strada = in.readString();
         nrEtaj = in.readInt();
@@ -53,6 +62,7 @@ public class Garsoniera implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
         dest.writeString(oras);
         dest.writeString(strada);
         dest.writeInt(nrEtaj);

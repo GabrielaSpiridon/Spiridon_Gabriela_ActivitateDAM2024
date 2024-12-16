@@ -14,8 +14,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+
+import java.util.List;
+
+
 public class AdaugareGarsoniera extends AppCompatActivity {
 
+    private GarsonieraDatabase garsonieraDB;
     private EditText editTextOras;
     private EditText editTextStrada;
     private EditText editTextNrEtaj;
@@ -27,6 +34,9 @@ public class AdaugareGarsoniera extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_adaugare_garsoniera);
+
+        garsonieraDB = Room.databaseBuilder(this,GarsonieraDatabase.class,"GarsonieraDatabase").allowMainThreadQueries().build();
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -61,9 +71,32 @@ public class AdaugareGarsoniera extends AppCompatActivity {
                 setResult(RESULT_OK, it);
                 sendBroadcast(it);
                 finish();
-
-
             }
+            public void selectMethod(View view) {
+                List<Garsoniera> garsoniere=garsonieraDB.garsonieraDAO().getAllGarsoniere();
+            }
+
+            public void insertMethod(View view) {
+                EditText etOras = findViewById(R.id.editTextOras);
+                String oras = etOras.getText().toString();
+
+                EditText etStrada = findViewById(R.id.editTextStrada);
+                String strada = etStrada.getText().toString();
+
+                EditText edNrEtaj = findViewById(R.id.editTextEtaj);
+                int nrEtaj = Integer.parseInt(edNrEtaj.getText().toString());
+
+                EditText edrApartament = findViewById(R.id.editTextNrApartament);
+                int nrApartament = Integer.parseInt(edrApartament.getText().toString());
+
+                Switch swOcupare = findViewById(R.id.switchEsteOcupat);
+                boolean esteOcupata = Boolean.parseBoolean(swOcupare.getText().toString());
+
+                Garsoniera garsoniera=new Garsoniera(oras, strada, nrEtaj, nrApartament, esteOcupata);
+                garsonieraDB.garsonieraDAO().insertGarsoniera(garsoniera);
+            }
+
+
         });
     }
 }
